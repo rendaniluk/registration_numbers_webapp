@@ -1,0 +1,17 @@
+{
+  "name": "registration_number_app",
+  "version": "1.0.0",
+  "description": "this app takes registration number and display it to user",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Lukhwa Rendani",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {},
+  "keywords": []
+}
