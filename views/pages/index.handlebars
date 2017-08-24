@@ -5,11 +5,23 @@
     <br>
     <input id="btnGreet" class="btn btn-success" type="submit" value="Add Registration Number"></input>
     <br>
+    <br>
+    <div class="radioBtn">
+          <input type="radio"  name="num" value="" checked="true">All
+          <input type="radio"  name="num" value="CA">Cape Town
+          <input type="radio"  name="num" value="CY">Bellville
+          <input type="radio"  name="num" value="CJ">Paarl
+          <input type="radio"  name="num" value="CL">Stellenbosch
+        </div>
   </div>
-</form>
+  <div align="center" class="">
+    <a href="/filter"><input id="btnGreet" class="btn btn-success" type="submit" value="Filter"></input></a>
+  </div>
 
+</form>
+<br>
 {{#each licenceNum}}
-  <li>{{this}}</li>
+  <li>{{registration}}</li>
 {{/each}}
 <br>
 <div class="error">
