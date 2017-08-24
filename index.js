@@ -10,8 +10,6 @@ const RegistrationRoutes = require('./regnum');
 const regNumbersRoutes = RegistrationRoutes();
 
 
-app.get('/', regNumbersRoutes.index);
-app.post('/', regNumbersRoutes.createReg);
 
 
 //configuring handlebars
@@ -38,6 +36,8 @@ app.use(session({
   saveUninitialized: true
 }));
 
+app.get('/', regNumbersRoutes.index);
+app.post('/', regNumbersRoutes.createReg);
 
 app.set('port', (process.env.PORT || 5000));
 
