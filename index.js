@@ -4,6 +4,7 @@ const app = express();
 const exphbs = require('express3-handlebars');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const flash = require('express-flash');
 
 const RegistrationRoutes = require('./regnum');
 
@@ -35,6 +36,8 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }));
+
+app.use(flash());
 
 app.get('/', regNumbersRoutes.index);
 app.post('/', regNumbersRoutes.createReg);

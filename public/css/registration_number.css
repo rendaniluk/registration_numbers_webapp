@@ -15,6 +15,16 @@ ul{
   list-style: none;
 }
 
+.error{
+  background-color: red;
+  text-align:center;
+  color:white;
+  font-size:large;
+  justify-content: center;
+  border-radius: 7px;
+  font-family:cursive;
+}
+
 #carReg{
   background-color:;
   text-align:center;
