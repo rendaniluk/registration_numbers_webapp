@@ -1,12 +1,13 @@
 <form class="form" action="/" method="post">
   <div class="myClass"><br>
     <div class="textField" align="center">
-      <input text-align="center" class="form-control" type="text" name="name" placeholder="Type registration number here">
+      <input class="form-control" type="text" name="name" placeholder="Type registration number here"></input>
     <br>
-    <input id="btnGreet" class="btn btn-success" type="submit" value="Add Registration number">
+    <input id="btnGreet" class="btn btn-success" type="submit" value="Add Registration number"></input>
     <br>
   </div>
 </form>
 
-
-<li>{{licenceNum}}</li>
+{{#if licenceNum}}
+<li>{{this}}</li>
+{{/if}}

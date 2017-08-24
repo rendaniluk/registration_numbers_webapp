@@ -1,15 +1,17 @@
+'use strict'
 const express = require('express');
 const app = express();
 const exphbs = require('express3-handlebars');
 const bodyParser = require('body-parser');
+const session = require('express-session');
 
-app.get('/registration_number/:lic', function(req, res) {
-  var license = (req.params.lic).substr(0, 2).toUpperCase() + ' ' + (req.params.lic)
-            .substr(2).toLowerCase()
-  res.render('pages/index', {
-    licenceNum: license
-  });
-});
+const RegistrationRoutes = require('./regnum');
+
+const regNumbersRoutes = RegistrationRoutes();
+
+
+app.get('/', regNumbersRoutes.index);
+app.post('/', regNumbersRoutes.createReg);
 
 
 //configuring handlebars
@@ -26,6 +28,15 @@ app.use(bodyParser.urlencoded({
   }))
   // parse application/json
 app.use(bodyParser.json());
+//configuring session
+app.use(session({
+  secret: 'keyboard cat',
+  cookie: {
+    maxAge: 60000 * 30
+  },
+  resave: true,
+  saveUninitialized: true
+}));
 
 
 app.set('port', (process.env.PORT || 5000));
