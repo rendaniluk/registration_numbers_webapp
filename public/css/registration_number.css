@@ -16,9 +16,17 @@ ul{
 }
 
 .error{
-  background-color: red;
   text-align:center;
-  color:white;
+  color:red;
+  font-size:large;
+  justify-content: center;
+  border-radius: 7px;
+  font-family:cursive;
+}
+
+.success{
+  text-align:center;
+  color:green;
   font-size:large;
   justify-content: center;
   border-radius: 7px;

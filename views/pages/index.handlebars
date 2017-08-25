@@ -1,22 +1,32 @@
 <form class="form" action="/" method="post">
   <div class="myClass"><br>
     <div class="textField" align="center">
+      <div class="error">
+        {{messages.error}}
+      </div>
+      <div class="success">
+        {{messages.success}}
+      </div>
+      <br>
       <input class="form-control" type="text" name="registration" placeholder="Type registration number here"></input>
     <br>
     <input id="btnGreet" class="btn btn-success" type="submit" value="Add Registration Number"></input>
     <br>
     <br>
-    <div class="radioBtn">
-          <input type="radio"  name="num" value="" checked="true">All
-          <input type="radio"  name="num" value="CA">Cape Town
-          <input type="radio"  name="num" value="CY">Bellville
-          <input type="radio"  name="num" value="CJ">Paarl
-          <input type="radio"  name="num" value="CL">Stellenbosch
-        </div>
+
+</form>
+<form class="form" action="/filter" method="post">
+  <div class="radioBtn">
+    <input type="radio"  name="num" value="" checked="true">All
+    <input type="radio"  name="num" value="CA">Cape Town
+    <input type="radio"  name="num" value="CY">Bellville
+    <input type="radio"  name="num" value="CJ">Paarl
+    <input type="radio"  name="num" value="CL">Stellenbosch
   </div>
-  <div align="center" class="">
-    <a href="/filter"><input id="btnGreet" class="btn btn-success" type="submit" value="Filter"></input></a>
-  </div>
+</div>
+<div align="center" class="">
+  <a href="/filter"><input id="btnGreet" class="btn btn-success" type="submit" value="Filter"></input></a>
+</div>
 
 </form>
 <br>
@@ -24,6 +34,3 @@
   <li>{{registration}}</li>
 {{/each}}
 <br>
-<div class="error">
-  {{messages.error}}
-</div>
