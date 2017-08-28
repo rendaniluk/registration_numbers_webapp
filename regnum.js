@@ -47,17 +47,21 @@ module.exports = function(models) {
 
     /////////////////filtering function/////////////////////////////
     const filter = function(req, res, next) {
-
       var radioValue = req.body.num;
-
-      models.lic_number.find({
-        radioValue
-      }, function(err, results) {
+      models.lic_number.find({}, function(err, results) {
+        var regList = [];
+        for (var i = 0; i < results.length; i++) {
+          var mainRes = results[i];
+          var regNumbers = mainRes.registration;
+          if (regNumbers.startsWith(radioValue)) {
+            regList.push(regNumbers);
+          }
+        }
         if (err) {
           return next(err);
         } else {
           res.render('pages/index', {
-            licenceNum: results
+            filtered: regList
           })
         }
       })

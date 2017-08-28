@@ -16,21 +16,25 @@
 
 </form>
 <form class="form" action="/filter" method="post">
-  <div class="radioBtn">
-    <input type="radio"  name="num" value="" checked="true">All
-    <input type="radio"  name="num" value="CA">Cape Town
-    <input type="radio"  name="num" value="CY">Bellville
-    <input type="radio"  name="num" value="CJ">Paarl
-    <input type="radio"  name="num" value="CL">Stellenbosch
+    <div id="radBtn" class="btn-group" data-toggle="buttons">
+      <label class="radio-inline btn btn-outline-info" for="All">
+    <input type="radio"  name="num" value="">All</label>
+
+    <label class="radio-inline btn btn-outline-info" for="Cape Town"><input type="radio"  name="num" value="CA">Cape Town</label>
+    <label class="radio-inline btn btn-outline-info" for="Bellville"><input type="radio"  name="num" value="CY">Bellville</label>
+    <label class="radio-inline btn btn-outline-info" for="Paarl"><input type="radio"  name="num" value="CJ">Paarl</label>
+    <label class="radio-inline btn btn-outline-info" for="Stellenbosch"><input type="radio"  name="num" value="CL">Stellenbosch</label>
   </div>
-</div>
+
 <div align="center" class="">
   <a href="/filter"><input id="btnGreet" class="btn btn-success" type="submit" value="Filter"></input></a>
 </div>
-
 </form>
 <br>
 {{#each licenceNum}}
   <li>{{registration}}</li>
+{{/each}}
+{{#each filtered}}
+  <li>{{this}}</li>
 {{/each}}
 <br>
